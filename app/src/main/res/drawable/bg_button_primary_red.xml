@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Roter Verlauf -->
+    <gradient
+        android:startColor="#FF3B30"
+        android:endColor="#D32F2F"
+        android:angle="0"/>
+
+    <!-- Runde, pillenförmige Ecken -->
+    <corners android:radius="28dp"/>
+
+</shape>

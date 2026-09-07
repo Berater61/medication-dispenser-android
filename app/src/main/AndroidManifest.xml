@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher_app"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_app_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="false">
+        <activity
+            android:name=".Scanner"
+            android:exported="false" />
+        <activity
+            android:name=".Liste_krankheiten"
+            android:exported="false" />
+        <activity
+            android:name=".Liste_allergien"
+            android:exported="false" />
+        <activity
+            android:name=".Liste_medikament"
+            android:exported="false" />
+        <activity
+            android:name=".Fnster_Medikamenten"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_Arzt"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_Kontaktperson"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_PersoenlicheDaten"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_Krankheiten"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_Allergien"
+            android:exported="false" />
+         <activity
+            android:name=".Kalender"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+        <activity
+            android:name=".Kontaktperson"
+            android:exported="false" />
+        <activity
+            android:name=".Fenster_Urlaubsmodus"
+            android:exported="false" />
+        <activity
+            android:name=".Profil"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
+        <activity
+            android:name=".Registrierung"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

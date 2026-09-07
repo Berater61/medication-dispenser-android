@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Links hell → rechts dunkler -->
+    <gradient
+        android:startColor="#FFB347"
+        android:endColor="#FF8A00"
+        android:angle="0" />
+
+    <!-- Runde Ecken -->
+    <corners android:radius="22dp" />
+
+</shape>

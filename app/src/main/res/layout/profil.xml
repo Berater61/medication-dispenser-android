@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7FB"
+    tools:context=".Profil">
+
+    <!-- Bottom Navigation (wie Home) -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@android:color/white"
+        app:itemHorizontalTranslationEnabled="false"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/bottom_nav_colors"
+        app:itemTextColor="@color/bottom_nav_colors"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/menu_user" />
+
+    <!-- Scroll Content -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/contentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="18dp">
+
+            <!-- Blauer Header -->
+            <View
+                android:id="@+id/headerBlue"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:background="@drawable/bg_header_blue" />
+
+            <!-- Optional: Back Icon (wenn du nicht willst -> visibility="gone") -->
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="-140dp"
+                android:contentDescription="back"
+                android:src="@drawable/asset_arrow_back"
+                android:visibility="invisible" />
+
+            <!-- Titel -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="-24dp"
+                android:text="Profil"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Inhalt Padding -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingTop="18dp">
+
+                <!-- Persönliche Daten -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPersonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvPersonalTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Persönliche Daten"
+                            android:textColor="#263238"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <!-- Edit Icon -->
+                        <ImageView
+                            android:id="@+id/btnEditPersonal"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:contentDescription="edit"
+                            android:src="@drawable/asset_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvPersonalTitle"
+                            app:layout_constraintBottom_toBottomOf="@id/tvPersonalTitle" />
+
+                        <!-- Name -->
+                        <TextView
+                            android:id="@+id/lblName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:textColor="#6B7A8C"
+                            android:textSize="12sp"
+                            android:layout_marginTop="14dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvPersonalTitle" />
+
+                        <TextView
+                            android:id="@+id/tvName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Maria Schmidt"
+                            android:textColor="#263238"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/lblName"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <!-- Geburtsdatum -->
+                        <TextView
+                            android:id="@+id/lblBirth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Geburtsdatum"
+                            android:textColor="#6B7A8C"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvName" />
+
+                        <TextView
+                            android:id="@+id/tvBirth"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="15.03.1948"
+                            android:textColor="#263238"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/lblBirth"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <!-- Adresse -->
+                        <TextView
+                            android:id="@+id/lblAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adresse"
+                            android:textColor="#6B7A8C"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvBirth" />
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Hauptstraße 42, 10115 Berlin"
+                            android:textColor="#263238"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/lblAddress"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                        <!-- Telefon -->
+                        <TextView
+                            android:id="@+id/lblPhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Telefon"
+                            android:textColor="#6B7A8C"
+                            android:textSize="12sp"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvAddress" />
+
+                        <TextView
+                            android:id="@+id/tvPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="+49 30 12345678"
+                            android:textColor="#263238"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/lblPhone"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp" />
+
+                <!-- Krankheiten (genau 3) -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardDiseases"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvDiseasesTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Krankheiten"
+                            android:textColor="#263238"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnEditDiseases"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:contentDescription="edit"
+                            android:src="@drawable/asset_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvDiseasesTitle"
+                            app:layout_constraintBottom_toBottomOf="@id/tvDiseasesTitle" />
+
+                        <!-- Item 1 -->
+                        <LinearLayout
+                            android:id="@+id/disease1"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvDiseasesTitle">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_red_hard" />
+
+                            <TextView
+                                android:id="@+id/tvDisease1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Bluthochdruck"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <!-- Item 2 -->
+                        <LinearLayout
+                            android:id="@+id/disease2"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/disease1">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_red_hard" />
+
+                            <TextView
+                                android:id="@+id/tvDisease2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Diabetes Typ 2"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <!-- Item 3 -->
+                        <LinearLayout
+                            android:id="@+id/disease3"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/disease2">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_red_hard" />
+
+                            <TextView
+                                android:id="@+id/tvDisease3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Osteoporose"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp" />
+
+                <!-- Allergien (genau 3) -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAllergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+
+                            android:id="@+id/tvAllergiesTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Allergien"
+                            android:textColor="#263238"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnEditAllergies"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:contentDescription="edit"
+                            android:src="@drawable/asset_edit"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvAllergiesTitle"
+                            app:layout_constraintBottom_toBottomOf="@id/tvAllergiesTitle" />
+
+                        <!-- Allergy 1 -->
+                        <LinearLayout
+                            android:id="@+id/allergy1"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvAllergiesTitle">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_orange_hard" />
+
+                            <TextView
+                                android:id="@+id/tvAllergy1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Penicillin"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <!-- Allergy 2 -->
+                        <LinearLayout
+                            android:id="@+id/allergy2"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/allergy1">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_orange_hard" />
+
+                            <TextView
+                                android:id="@+id/tvAllergy2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Nüsse"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <!-- Allergy 3 -->
+                        <LinearLayout
+                            android:id="@+id/allergy3"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/allergy2">
+
+                            <View
+                                android:layout_width="8dp"
+                                android:layout_height="8dp"
+                                android:background="@drawable/bg_dot_orange_hard" />
+
+                            <TextView
+                                android:id="@+id/tvAllergy3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="Pollen"
+                                android:textColor="#263238"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="14dp" />
+
+                <!-- Aktuelle Medikamente (genau 3) -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/CardMedikament"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvMedsTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aktuelle Medikamente"
+                            android:textColor="#263238"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/btnEditMeds"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:contentDescription="edit"
+                            android:src="@drawable/asset_edit"
+                            app:layout_constraintBottom_toBottomOf="@id/tvMedsTitle"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tvMedsTitle" />
+
+                        <!-- Med 1 -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/medItem1"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="14dp"
+                            app:cardBackgroundColor="#EAF2FF"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvMedsTitle">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:id="@+id/tvMed1Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Aspirin 100mg"
+                                    android:textColor="#263238"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvMed1Hint"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="1x täglich morgens"
+                                    android:textColor="#6B7A8C"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Med 2 -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/medItem2"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="10dp"
+                            app:cardBackgroundColor="#EAF2FF"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/medItem1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:id="@+id/tvMed2Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Metformin 500mg"
+                                    android:textColor="#263238"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvMed2Hint"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="2x täglich"
+                                    android:textColor="#6B7A8C"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Med 3 -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/medItem3"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="10dp"
+                            app:cardBackgroundColor="#EAF2FF"
+                            app:cardCornerRadius="14dp"
+                            app:cardElevation="0dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/medItem2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="12dp">
+
+                                <TextView
+                                    android:id="@+id/tvMed3Name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Ramipril 5mg"
+                                    android:textColor="#263238"
+                                    android:textSize="13sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tvMed3Hint"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:text="1x täglich morgens"
+                                    android:textColor="#6B7A8C"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp" />
+
+                <!-- Notfallkontakt Button (erstmal blau wie alle anderen) -->
+                <Button
+                    android:id="@+id/btnEmergency"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_button_primary_red"
+                    android:elevation="2dp"
+                    android:text="NOTFALLKONTAKT"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

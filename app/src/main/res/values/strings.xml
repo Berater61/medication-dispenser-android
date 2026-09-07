@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Medikamenten Spender</string>
+
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Passwort</string>
+    <string name="login_button">ANMELDEN</string>
+
+    <string name="register_hint">Noch nicht registriert? Jetzt hier registrieren.</string>
+
+    <string name="title_activity_anmeldung">Anmeldung</string>
+    <string name="versicherungsnummer">Versicherungsnummer</string>
+    <string name="telefonnummer">Telefonnummer</string>
+    <string name="adresse">Adresse</string>
+    <string name="geburtsdatum">Geburtsdatum</string>
+    <string name="nachname">Nachname</string>
+    <string name="vorname">Vorname</string>
+    <string name="username">Username</string>
+    <string name="passwort">Passwort</string>
+    <string name="passwort_wiederholen">Passwort wiederholen</string>
+    <string name="title_activity_home">Home</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Blauer Verlauf -->
+    <gradient
+        android:startColor="#2F6BFF"
+        android:endColor="#1E4FD8"
+        android:angle="0"/>
+
+    <!-- Runde, pillenförmige Ecken -->
+    <corners android:radius="28dp"/>
+
+</shape>

@@ -1,0 +1,28 @@
+# Android Studio and Gradle
+.gradle/
+.idea/
+.kotlin/
+*.iml
+local.properties
+
+# Build outputs
+build/
+**/build/
+*.apk
+*.aab
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Firebase project configuration
+app/google-services.json
+google-services.json
+
+# Signing material
+*.jks
+*.keystore
+keystore.properties
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.MedikamentenSpender" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#2F6BFF</item>
+        <item name="colorPrimaryVariant">#1E4FD6</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="android:statusBarColor">#2F6BFF</item>
+    </style>
+
+</resources>

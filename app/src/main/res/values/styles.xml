@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Spaltenüberschriften (Mo–So) -->
+    <style name="DayHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#6B7A8C</item>
+    </style>
+
+    <!-- Zeilenüberschriften (Morgen, Mittag, ...) -->
+    <style name="RowHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#6B7A8C</item>
+        <item name="android:paddingEnd">8dp</item>
+    </style>
+
+    <!-- Zelle grün -->
+    <style name="CellGreen">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@drawable/bg_cell_green</item>
+    </style>
+    <!-- 🔵 Blau: verfügbar -->
+    <style name="CellBlue">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@drawable/bg_cell_blue</item>
+    </style>
+
+    <!-- 🔴 Rot: Fehler / vergessen -->
+    <style name="CellRed">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@drawable/bg_cell_red</item>
+    </style>
+
+    <!-- ⚪ Weiß: leer -->
+    <style name="CellWhite">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@drawable/bg_cell_white</item>
+    </style>
+    <style name="CellContainer">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+</resources>

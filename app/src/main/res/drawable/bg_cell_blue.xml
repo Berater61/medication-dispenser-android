@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Hintergrund -->
+    <item>
+        <shape>
+            <solid android:color="#2F6BFF"/>
+            <corners android:radius="999dp"/>
+        </shape>
+    </item>
+
+    <!-- Uhr-Icon (zentriert) -->
+    <item
+        android:width="16dp"
+        android:height="16dp"
+        android:gravity="center">
+        <vector
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M12,20A8,8 0 1,1 20,12A8,8 0 0,1 12,20ZM11,6h2v7l4.25,2.52-1,1.68L11,14Z"/>
+        </vector>
+    </item>
+
+</layer-list>

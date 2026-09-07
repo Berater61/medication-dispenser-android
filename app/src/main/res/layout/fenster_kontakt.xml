@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F7FB"
+    tools:context=".Fenster_Kontaktperson">
+
+    <!-- Blauer Header -->
+    <!-- Blauer Header -->
+    <View
+        android:id="@+id/headerBlue"
+        android:layout_width="0dp"
+        android:layout_height="190dp"
+        android:background="@drawable/bg_header_blue"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Zurück Pfeil (fix oben links im Header) -->
+    <ImageView
+        android:id="@+id/btnBackK"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="back"
+        android:src="@drawable/asset_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Titel (fix neben dem Pfeil, gleiche Höhe) -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="20dp"
+        android:text="Kontaktperson hinzufügen"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/btnBackK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBackK"
+        app:layout_constraintBottom_toBottomOf="@id/btnBackK" />
+
+
+    <!-- Scrollbarer Inhalt -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollContent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toBottomOf="@id/headerBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="8dp"
+                app:cardUseCompatPadding="true"
+                app:cardBackgroundColor="@android:color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Name -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name"
+                        android:textColor="#6B7A8C"
+                        android:textSize="12sp"/>
+
+                    <EditText
+                        android:id="@+id/etContactName"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="Thomas Schmidt"
+                        android:background="@drawable/thm_input_light"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="#263238"
+                        android:textColorHint="#6B7A8C"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"/>
+
+                    <!-- Beziehung -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Beziehung"
+                        android:textColor="#6B7A8C"
+                        android:textSize="12sp"/>
+
+                    <EditText
+                        android:id="@+id/etContactRelation"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="z.B. Sohn, Tochter, Ehepartner"
+                        android:background="@drawable/thm_input_light"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="#263238"
+                        android:textColorHint="#6B7A8C"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"/>
+
+                    <!-- Telefon -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Telefon"
+                        android:textColor="#6B7A8C"
+                        android:textSize="12sp"/>
+
+                    <EditText
+                        android:id="@+id/etContactPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="+49 170 1234567"
+                        android:inputType="phone"
+                        android:background="@drawable/thm_input_light"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="#263238"
+                        android:textColorHint="#6B7A8C"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"/>
+
+                    <!-- E-Mail -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="E-Mail"
+                        android:textColor="#6B7A8C"
+                        android:textSize="12sp"/>
+
+                    <EditText
+                        android:id="@+id/etContactMail"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="thomas.schmidt@email.com"
+                        android:inputType="textEmailAddress"
+                        android:background="@drawable/thm_input_light"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="#263238"
+                        android:textColorHint="#6B7A8C"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"/>
+
+            <!-- Speichern Button -->
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_button_primary_blue"
+                android:text="SPEICHERN"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
